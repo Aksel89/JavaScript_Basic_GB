@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        переданного значения операции (использовать switch) выполнить одну из арифметических операций
+        (использовать функции из задания 4) и вернуть полученное значение. */
+
+        function mathOperation(arg1, arg2, operation) {
+
+            function numSum(arg1, arg2) {
+                res = arg1 + arg2;
+                return alert(`Сумма ваших чисел: ${res}`);
+            }
+
+            function numDiff(arg1, arg2) {
+                res = arg1 - arg2;
+                return alert(`Разность ваших чисел: ${res}`);
+            }
+
+            function numProd(arg1, arg2) {
+                res = arg1 * arg2;
+                return alert(`Произведение ваших чисел: ${res}`);
+            }
+
+            function numQuot(arg1, arg2) {
+                res = arg1 / arg2;
+                return alert(`Частное ваших чисел: ${res}`);
+            }
+
+            switch (operation) {
+
+                case 'сложение':
+                    numSum(arg1, arg2);
+                    break;
+
+                case 'вычитание':
+                    numDiff(arg1, arg2);
+                    break;
+
+                case 'умножение':
+                    numProd(arg1, arg2);
+                    break;
+
+                case 'деление':
+                    numQuot(arg1, arg2);
+                    break;
+            }
+        }
+
+        let a = parseInt(prompt("Введите первое целое число"));
+        let b = parseInt(prompt("Введите втрое целое число"));
+        let action = prompt("Напишите прописью какую операцию с данными числами вы хотите выполнить: сложение, вычитание, умножение или деление?");
+
+        mathOperation(a, b, action);
+
+    </script>
+</body>
+
+</html>
