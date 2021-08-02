@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* (это задание делайте по желанию) Написать функцию, преобразующую число в объект. Передавая на  вход число в диапазоне [0, 999],
+        мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+        - единицы (в свойстве units)
+        - десятки (в свойстве tens)
+        - сотни (в свойстве hundereds)
+        Например, для числа 45 мы должны получить следующий объект:
+        {
+        units: 5, //это единицы
+        tens: 4, //это десятки
+        hundreds: 0, //это сотни
+        }
+        Если число было передано вне [0, 999] диапазона, не целое число или вообще не число,
+        необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект. */
+
+        'use strict'
+        function numberInObject() {
+            let num = prompt('Введите число от 0 до 999');
+            if (Number(num)) {
+                if (num % 1 == 0) {
+                    if (num >= 0 && num <= 999) {
+                        let num_hundreds = Math.floor(num / 100);
+                        let num_tens = Math.floor((num % 100) / 10);
+                        let num_units = Math.floor(((num % 100) % 10));
+                        alert(`units: ${num_units}\ntens: ${num_tens}\n hundreds: ${num_hundreds}`)
+                    }
+                    else {
+                        console.log('введено число вне диапазона');
+                        return {};
+                    }
+                }
+                else {
+                    console.log('введено не целое число');
+                    return {};
+                }
+            }
+            else {
+                console.log('введено не число');
+                return {};
+            }
+        }
+
+        numberInObject();
+    </script>
+</body>
+
+</html>
